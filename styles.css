@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background-color: #ffebf3; /* Light pink background */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: none; /* Hide all containers by default */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding around the content */
+    position: relative; /* Position relative for absolute children */
+}
+
+.text {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transform: scale(0);
+    animation: growText 1.5s ease-out forwards;
+    text-shadow: 0 0 10px white;
+}
+
+@keyframes growText {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.active {
+    display: flex; /* Show the active container */
+}
+
+h1 {
+    font-size: 2.5rem; /* Large font size for headings */
+    color: #ff4081; /* Pink color for headings */
+}
+
+button {
+    background-color: #ff4081; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 1.5rem; /* Font size for button text */
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button:hover {
+    background-color: #d81b60; /* Darker pink on hover */
+}
+
+.floating-teddy {
+    position: absolute; /* Absolute positioning for floating effect */
+    top: 0%; /* Align to the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    font-size: 4rem; /* Large teddy emoji */
+    animation: float 3s infinite alternate ease-in-out; /* Floating animation */
+}
+
+.floating-flower {
+    position: absolute; /* Absolute positioning for floating effect */
+    top: 75%; /* Align to the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    font-size: 4rem; /* Large teddy emoji */
+    animation: float 3s infinite alternate ease-in-out; /* Floating animation */
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0); } /* Start position */
+    100% { transform: translateX(-50%) translateY(-20px); } /* End position */
+}
+
+.gif-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack GIFs vertically */
+    align-items: center; /* Center align GIFs */
+    height: auto; /* Allow height to adjust based on content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Limit height to 80% of the viewport */
+    margin: 20px; /* Add some margin */
+}
+
+.gift-box {
+    display: block; /* Ensure these containers are block elements */
+    visibility: visible; /* Make sure they are visible */
+}
+
+.letter-container {
+    position: relative;
+    width: 400px; /* Adjust based on letter size */
+    margin: 20px auto;
+}
+
+#letterImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+#letterTextContainer {
+    position: absolute;
+    top: 15%; /* Adjust text positioning */
+    left: 8%;
+    width: 84%;
+    height: 70%; /* Ensures text fits inside the letter */
+    text-align: left;
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.5rem; /* Adjusts dynamically later */
+    color: black;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    overflow-y: auto; /* Enables scrolling if needed */
+    padding: 5px;
+}
+
+
+.gift-box img {
+    width: 100px; /* Width for the gift image */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.letter-container p {
+    font-size: 1.8rem; /* Font size for letter text */
+    color: #333; /* Dark gray color for text */
+    font-family: 'Cursive'; /* Cursive font for letter text */
+}
+

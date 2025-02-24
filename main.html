@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Slide 1 -->
+    <div class="container active" id="slide1">
+        <div class="floating-teddy">🧸</div>
+        <h1>Miss, good to see you! There's a surprise for you! 🎉</h1>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="text" id="slide2">
+        <div class="floating-teddy">🧸</div>
+        <h1>Ohh, you’re here! Feels like today is special… maybe for someone <br>*very* special? 😉🎉</h1>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="text" id="slide3">
+        <h1>Hey Wait... are you the special one? Hmm…</h1>
+        <button onclick="chooseOption(true)">You're</button>
+        <button onclick="chooseOption(false)">You're, not</button>
+    </div>
+
+    <!-- Funny Text for "No, I'm not" -->
+    <div class="text" id="funnyText">
+        <h1 id="funnyMsg"></h1>
+    </div>
+
+    <!-- Special Message Slide -->
+    <div class="container" id="specialSlide">
+        <div class="floating-flower">🌹🌹 😘</div>
+        <h1>Yeah, You're my special one miss!!</h1>
+        <h2 onclick = "startSurprise()">⬇️</h2>
+        <!-- <button onclick="startSurprise()">⬇️</button> -->
+    </div>
+
+    <!-- GIF Section -->
+    <div class="container gif-container" id="gifSection">
+        <img id="gif1" src="extra/coming.gif" style="display: none;">
+        <img id="gif2" src="extra/cut_me.gif" style="display: none;">
+        <img id="gif3" src="extra/there_you_go.gif" style="display: none;">
+        <div class="gift-box">
+            <img src="extra/gift.png" onclick="showLetter()" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <div id="letterSection" class="hidden">
+        <div class="letter-container">
+            <!-- Letter Image -->
+            <img src="extra/letter.png" id="letterImage" alt="Letter Background">
+    
+            <!-- Text Overlay -->
+            <div id="letterTextContainer">
+                <p id="letterText"></p>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="extra/happy_birthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
